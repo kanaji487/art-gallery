@@ -1,23 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import AppHeader from './Components/AppHeader';
+import ArtItems from './Components/ArtItems';
+import arts from './Data/arts';
+import ArtPost from './Components/ArtPost'
+import {useState} from 'react'
 
 function App() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [searchText, setSearchtext] = useState('');
+
+  // show image detail when click on the image
+  function onImageSelected(theImage) {
+    setSelectedImage(theImage);
+  }
+
+  // Close image popup
+  function closeImagePopup(){
+    setSelectedImage(null)
+  }
+
+  const artElements = arts.map((art, index) => {
+    return <ArtItems key={index} art={art} onImageClick={onImageSelected} />
+  });
+
+  let artPost = null
+  if (!!selectedImage) {
+    artPost = <ArtPost art = {selectedImage} onBgClick={closeImagePopup} />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <title>Art</title>
+      <AppHeader />
+      <div className='search'>
+        <input 
+        className='search-input'
+        placeholder='search here' 
+        value={searchText}
+        onChange={(event) => {setSearchtext(event.target.value)}}
+      />
+      </div>
+      <div className="app-grid">
+        {artElements}
+      </div>
+      {artPost}
     </div>
   );
 }
