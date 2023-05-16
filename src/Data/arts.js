@@ -1,34 +1,34 @@
 const arts = [
     {
-      title: "waterfall-1",
+      title: "Waterfall outside cave",
       thumbnailUrl: "/images/waterfall-1.webp"
     },
     {
-      title: "waterfall-2",
+      title: "Waterfall in the middle of the lake",
       thumbnailUrl: "/images/waterfall-2.webp"
     },
     {
-      title: "waterfall-3",
+      title: "Evening Waterfall",
       thumbnailUrl: "/images/waterfall-3.webp"
     },
     {
-      title: "waterfall-4",
+      title: "Waterfall under the stars",
       thumbnailUrl: "/images/waterfall-4.webp"
     },
     {
-      title: "waterfall-5",
+      title: "Waterfalls in the valley",
       thumbnailUrl: "/images/waterfall-5.webp"
     },
     {
-      title: "waterfall-6",
+      title: "Waterfall near the river",
       thumbnailUrl: "/images/waterfall-6.webp"
     },
     {
-      title: "waterfall-7",
+      title: "Waterfalls and fog",
       thumbnailUrl: "/images/waterfall-7.webp"
     },
     {
-      title: "waterfall-8",
+      title: "Waterfalls and steam",
       thumbnailUrl: "/images/waterfall-8.webp"
     }
   ];

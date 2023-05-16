@@ -14,12 +14,16 @@ function App() {
     setSelectedImage(theImage);
   }
 
-  // Close image popup
+  // Close image popup when click outside image  popup
   function closeImagePopup(){
     setSelectedImage(null)
   }
 
-  const artElements = arts.map((art, index) => {
+  const filteredImages = arts.filter((art) => {
+    return art.title.includes(searchText);
+  });
+
+  const artElements = filteredImages.map((art, index) => {
     return <ArtItems key={index} art={art} onImageClick={onImageSelected} />
   });
 
